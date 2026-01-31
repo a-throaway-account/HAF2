@@ -1,0 +1,43 @@
+/* =========================================================
+   GLOBAL LAYOUT FIX
+========================================================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;       /* <--- ADD THIS */
+  padding: 0;
+}
+
+/* clamps EVERYTHING below navbar */
+.site-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* prevents section math overflow */
+section {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* media never overflow */
+img,
+video,
+svg,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* fix transform bleed */
+[class*="slider"],
+[class*="track"],
+[class*="grid"] {
+  max-width: 100%;
+}

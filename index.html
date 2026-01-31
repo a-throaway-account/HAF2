@@ -1,0 +1,1078 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Emart - Multi-purpose WooCommerce Theme">
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+	<!-- This site is optimized with the Yoast SEO plugin v25.7 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Hustle And Flow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+
+	<link rel="canonical" href="https://hustleandflow.in/" />
+	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="marquee.css">
+    <link  href="https://assets.calendly.com/assets/external/widget.css"
+  rel="stylesheet"/>
+  <link rel="stylesheet" href="loading_screen.css">
+  <link rel="stylesheet" href="launch-section.css">
+  <link rel="stylesheet" href="reviews.css">
+  <link rel="stylesheet" href="philosophy.css">
+  <link rel="stylesheet" href="services.css">
+  <link rel="stylesheet" href="focal-hero.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="blogs.css">
+
+		
+</head>
+
+<body class="home page-template page-template-elementor_header_footer page page-id-11889 wp-embed-responsive Wplgnite Wplgnite-dizmo elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-11889">
+	<div id="splash" class="splash light">
+  <div class="brand-lockup">
+    Hustle & Fl
+    <img
+      src="logos/hustleandflow-logo.png"
+      class="logo-letter"
+      alt=""
+    />
+    w
+  </div>
+</div>
+  
+    <!--Progress Bar-->
+    <div class="progress-container">
+    <div class="progress-bar" id="scrollBar"></div>
+</div>
+
+    
+    
+    <!--NAVBAR-->
+    <nav class="main-nav">
+    <div class="nav-container">
+        <a href="#" class="nav-logo">
+            <img src="logos/hustleandflow.png" alt="HustleandFlow" id="navLogo">
+        </a> <button class="menu-burger"  id="menuToggle" aria-label="Toggle Menu">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </button>
+    </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="">Home</a>
+  <a href="#our-services">Services</a>
+  <a href="#contact-us">Contact</a>
+</div>
+<script>
+const burger = document.getElementById("menuToggle");
+const menu = document.getElementById("mobileMenu");
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active");
+  menu.classList.toggle("open");
+});
+</script>
+
+
+<script>
+    const nav = document.querySelector(".main-nav");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 20) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
+</script>
+<!--Main-Hero-->
+
+<main class="site-wrapper">
+<section class="focal-hero">
+    <div class="hero-noise-overlay"></div>
+    <div class="container">
+        <div class="hero-content">
+       <h1 class="hero-main-title">
+        <span class="hero-eyebrow">
+    We help you generate
+  </span>
+    
+    <span class="revenue-highlight">
+        M<span class="spinning-o-container">
+            <span class="o-border">O</span>
+            <div class="circular-text-wrap">
+                <span style="--i:0">M</span><span style="--i:1">O</span>
+                <span style="--i:2">R</span><span style="--i:3">E</span>
+                <span style="--i:4">*</span><span style="--i:5">R</span>
+                <span style="--i:6">E</span><span style="--i:7">V</span>
+                <span style="--i:8">E</span><span style="--i:9">N</span>
+                <span style="--i:10">U</span><span style="--i:11">E</span>
+                <span style="--i:12">*</span>
+            </div>
+        </span>RE REVENUE
+    </span>
+</h1>
+            <p class="hero-sub-text">
+  <span class="hero-quote shiny">
+    Ignite Your <span class="text-accent-red">Hustle</span>, 
+    Find Your <span class="text-outline">Flow</span>
+  </span>
+
+  <span class="hero-description">
+    We combine efficient growth strategies with seamless execution to scale your brand from local hustle to global flow.
+  </span>
+</p>
+            <div class="hero-cta-group">
+                <a href="#contact-us" class="btn-primary-large" id="bookMeetingBtn">Book a Meeting</a>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+<script>
+document.getElementById("bookMeetingBtn").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  Calendly.initPopupWidget({
+    url: "https://calendly.com/kashyap-sawanjha?primary_color=dc3232&text_color=000000&background_color=#e2ddb4"
+  });
+});
+</script>
+
+
+<script>
+document.querySelectorAll('.circular-text-wrap').forEach(el => {
+
+  let rotation = 0;
+  let speed = 360 / 20; // degrees per second
+  let targetSpeed = speed;
+  let lastTime = performance.now();
+
+  const baseDuration = Number(el.dataset.duration || 20);
+  const hoverMode = el.dataset.hover || 'speedUp';
+
+  function setSpeedByMode(mode) {
+    switch (mode) {
+      case 'slowDown':
+        targetSpeed = 360 / (baseDuration * 2);
+        break;
+      case 'speedUp':
+        targetSpeed = 360 / (baseDuration / 4);
+        break;
+      case 'pause':
+        targetSpeed = 0;
+        break;
+      case 'goBonkers':
+        targetSpeed = 360 / (baseDuration / 20);
+        break;
+      default:
+        targetSpeed = 360 / baseDuration;
+    }
+  }
+
+  function animate(now) {
+    const delta = (now - lastTime) / 1000;
+    lastTime = now;
+
+    // smooth interpolation (spring-ish)
+    speed += (targetSpeed - speed) * 0.08;
+
+    rotation += speed * delta;
+    el.style.transform = `rotate(${rotation}deg)`;
+
+    requestAnimationFrame(animate);
+  }
+
+  el.addEventListener('mouseenter', () => {
+    setSpeedByMode(hoverMode);
+  });
+
+  el.addEventListener('mouseleave', () => {
+    targetSpeed = 360 / baseDuration;
+  });
+
+  requestAnimationFrame(animate);
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+// Check if GSAP is actually loaded
+if (typeof gsap !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const initHeroAnimation = () => {
+        console.log("H&F Animation Initializing...");
+
+        const targets = [
+            { selector: '.hero-eyebrow', delay: 0 },
+            { selector: '.hero-main-title', delay: 0.1 },
+            { selector: '.hero-sub-text', delay: 0.2 },
+            { selector: '.hero-cta-group', delay: 0.3 }
+        ];
+
+        targets.forEach(({ selector, delay }) => {
+            const el = document.querySelector(selector);
+            
+            if (el) {
+                // We use .fromTo so we define exactly where it starts and ends
+                gsap.fromTo(el, 
+                    { 
+                        y: 50, 
+                        opacity: 0 
+                    }, 
+                    { 
+                        y: 0, 
+                        opacity: 1, 
+                        duration: 1, 
+                        delay: delay, 
+                        ease: "power4.out",
+                        scrollTrigger: {
+                            trigger: el,
+                            start: "top 95%",
+                            toggleActions: "play none none none"
+                        }
+                    }
+                );
+            }
+        });
+    };
+
+    // Run immediately and also on load to be safe
+    initHeroAnimation();
+} else {
+    console.error("GSAP not found! Make sure the CDN links are above this script.");
+    // Emergency Fallback: If GSAP fails, show the text anyway
+    document.querySelectorAll('.hero-main-title, .hero-sub-text, .hero-cta-group').forEach(el => el.style.opacity = 1);
+}
+</script>
+
+<!--BANNER IMG SECTION-->
+<section class="launch-section">
+  <div class="launch-left">
+    <span class="badge">LAUNCHED</span>
+    <h1>THIS MONTH</h1>
+    <p>Crafting digital excellence for premium brands.</p>
+  </div>
+
+  <div class="image-grid">
+  <div class="tile"><div class="tile-inner"></div></div>
+  <div class="tile"><div class="tile-inner"></div></div>
+  <div class="tile"><div class="tile-inner"></div></div>
+  <div class="tile"><div class="tile-inner"></div></div>
+</div>
+</section>
+<script>
+const images = [
+  "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9",
+  "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+  "https://images.unsplash.com/photo-1542838132-92c53300491e"
+];
+
+const tiles = document.querySelectorAll(".tile");
+
+let currentImage = 0;
+let nextImage = 1;
+
+const order = [0, 1, 2, 3]; // TL → TR → BL → BR
+
+function applyImage(imgIndex) {
+  tiles.forEach((tile, i) => {
+    const inner = tile.querySelector(".tile-inner");
+
+    const col = i % 2;                 // 0 or 1
+    const row = Math.floor(i / 2);     // 0 or 1
+
+    inner.style.backgroundImage = `url(${images[imgIndex]})`;
+
+    inner.style.backgroundPosition = `
+      ${col === 0 ? "0%" : "100%"}
+      ${row === 0 ? "0%" : "100%"}
+    `;
+  });
+}
+
+
+applyImage(currentImage);
+
+function animateSwap() {
+  let step = 0;
+
+  const interval = setInterval(() => {
+    const tile = tiles[order[step]];
+    tile.querySelector(".tile-inner").style.backgroundImage =  `url(${images[nextImage]})`;
+
+    
+
+    step++;
+
+    if (step === 4) {
+      clearInterval(interval);
+      currentImage = nextImage;
+      nextImage = (nextImage + 1) % images.length;
+    }
+  }, 350);
+}
+
+setInterval(animateSwap, 3000);
+</script>
+
+
+<!--Philosophy Section-->				
+<section class="philosophy-section">
+    <div class="philosophy-header">
+
+
+  <h2 class="section-title">
+    Our    <span class="text-highlight">Philosophy</span>
+  </h2>
+
+</div>
+
+
+  <div class="philosophy-container">
+
+    <!-- LEFT FLIP CARD -->
+    <div class="flip-card" id="philosophyCard">
+      <div class="flip-inner">
+
+        <!-- FRONT: TEXT -->
+        <div class="flip-face front philosophy-card">
+          
+
+          <h2>
+            We don't just manage accounts.<br>
+            <span class="gradient-text">We take ownership.</span>
+          </h2>
+
+          <p>
+            Most agencies act as external vendors.
+            We operate as an extension of your internal team.
+          </p>
+
+          <p>
+            When we’re on board, your KPIs become our obsession.
+          </p>
+        </div>
+
+        <!-- BACK: IMAGE -->
+        <div class="flip-face back image-card">
+
+          <h2>
+            We don't just manage accounts.<br>
+            <span class="gradient-text">We take ownership.</span>
+          </h2>
+
+          <p>
+            Most agencies act as external vendors.
+            We operate as an extension of your internal team.
+          </p>
+
+          <p>
+            When we’re on board, your KPIs become our obsession.
+          </p>
+        </div>
+
+          
+        </div>
+
+      </div>
+
+    <!-- RIGHT STATIC IMAGE -->
+    <div class="static-image-card">
+      <img
+        src="https://picsum.photos/id/20/800/1000"
+        alt="Strategy"
+      />
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="flip-cta">
+    <button id="flipBtn" class="btn-primary">
+      Know More
+    </button>
+  </div>
+
+</section>
+
+
+
+<script>
+const card = document.getElementById("philosophyCard");
+const btn = document.getElementById("flipBtn");
+
+btn.addEventListener("click", () => {
+  card.classList.toggle("flipped");
+});
+</script>
+
+
+
+<!--Logo Sliding Section-->
+<section class="clients-brand-section">
+    
+
+    <article class="wrapper">
+        <div class="marquee" id="track1">
+            <div class="marquee__group">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                
+            </div>
+            <div aria-hidden="true" class="marquee__group">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+            </div>
+        </div>
+
+        <div class="marquee marquee--reverse" id="track2">
+            <div class="marquee__group">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+            </div>
+            <div aria-hidden="true" class="marquee__group">
+                
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+            </div>
+        </div>
+        <div class="marquee" id="track1">
+            <div class="marquee__group">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+            </div>
+            <div aria-hidden="true" class="marquee__group">
+                
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+                <img src="logos/hustleandflow-logo.png" alt="">
+            </div>
+        </div>
+    </article>
+</section>
+
+<!--REVIEW SECTION-->
+<section class="reviews-section">
+    
+    <div class="reviews-wrapper">
+        <div class="reviews-track" id="reviewsTrack">
+            <article class="review-card">
+                <div class="card-content">
+                    <img src="logos/profile.png" alt="Profile" class="review-avatar">
+                    <hr class="review-divider">
+                    <p class="review-text">"They completely transformed our online presence. The ROI was immediate and substantial."</p>
+                    <h2 class="review-name">Jason Parker</h2>
+                    <p class="review-designation">CEO, TechFlow</p>
+                </div>
+            </article>
+
+            <article class="review-card">
+                <div class="card-content">
+                    <p class="review-text">"Minimalist, effective, and straight to the point. Exactly what we needed for our brand launch."</p>
+                    <hr class="review-divider">
+                    <img src="logos/profile.png" alt="Profile" class="review-avatar">
+                    <h2 class="review-name">Sarah Jenkins</h2>
+                    <p class="review-designation">Director, VogueInc</p>
+                </div>
+            </article>
+
+            <article class="review-card">
+                <div class="card-content">
+                    <img src="logos/profile.png" alt="Profile" class="review-avatar">
+                    <hr class="review-divider">
+                    <p class="review-text">"The team understood our vision perfectly. The communication was seamless throughout."</p>
+                    <h2 class="review-name">Michael Ross</h2>
+                    <h2 class="review-name">Michael Ross</h2>
+                    <p class="review-designation">Founder, StartUp X</p>
+                </div>
+            </article>
+
+            <article class="review-card">
+                <div class="card-content">
+                    <p class="review-text">"Incredible attention to detail. The new website is converting at 3x our previous rate."</p>
+                    <hr class="review-divider">
+                    <img src="logos/profile.png" alt="Profile" class="review-avatar">
+                    <h2 class="review-name">Emily Clarke</h2>
+                    <p class="review-designation">Marketing Head, Omni</p>
+                </div>
+            </article>
+            <article class="review-card">
+                <div class="card-content">
+                    <p class="review-text">"Incredible attention to detail. The new website is converting at 3x our previous rate."</p>
+                    <hr class="review-divider">
+                    <img src="logos/profile.png" alt="Profile" class="review-avatar">
+                    <h2 class="review-name">Emily Scott</h2>
+                    <p class="review-designation">Marketing Head, Fieldset</p>
+                </div>
+            </article>
+        <article class="review-card">
+                <div class="card-content">
+                    <p class="review-text">"Incredible attention to detail. The new website is converting at 3x our previous rate."</p>
+                    <hr class="review-divider">
+                    <img src="logos/profile.png" alt="Profile" class="review-avatar">
+                    <h2 class="review-name">Michael Clarke</h2>
+                    <p class="review-designation">Marketing Head, Gynoveda</p>
+                </div>
+            </article>
+        
+        </div>
+
+
+        <div class="reviews-controls">
+            <button class="review-nav prev-btn" aria-label="Previous Review">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button class="review-nav next-btn" aria-label="Next Review">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+        </div>
+    </div>
+</section>
+<script>document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('reviewsTrack');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    // 1. SCROLL LOGIC
+    if (track && prevBtn && nextBtn) {
+        const scrollAmount = 430; // Card width + gap
+
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+    }
+
+    // 2. 3D TILT LOGIC
+    const cards = document.querySelectorAll('.review-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Calculate rotation values
+            const rotateX = ((y - centerY) / centerY) * -5; // Max 15 degree tilt
+            const rotateY = ((x - centerX) / centerX) * 5;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
+    });
+});</script>
+<!--Services-->				
+<section id="our-services" class="services-section">
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="services-header">
+      <div class="header-left">
+        <span class="label-accent">Our Expertise</span>
+        <h2 class="section-title">
+          We got you Covered,<br>
+          <span class="text-highlight">Head to Toe.</span>
+        </h2>
+      </div>
+    </div>
+
+    <!-- SLIDER -->
+    <div class="services-slider">
+
+      <!-- LEFT ARROW -->
+      <button class="slider-arrow prev"
+        onclick="moveServices('left')">
+        <svg width="20" height="20" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor"
+          stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+      </button>
+
+      <!-- RIGHT ARROW -->
+      <button class="slider-arrow next"
+        onclick="moveServices('right')">
+        <svg width="20" height="20" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor"
+          stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+      </button>
+
+      <!-- TRACK -->
+      <div class="services-track" id="servicesGrid">
+
+        <!-- CARD -->
+        <div class="service-card">
+  <div class="service-icon-row">
+    <div class="service-icon">01</div>
+    <img src="vids/amazon-animation.gif" class="service-gif" />
+  </div>
+  <h5>Amazon <span class="accent-text">Ads</span></h5>
+  <p>Launch and scale your D2C brand on India’s leading marketplace.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon-row">
+    <div class="service-icon">02</div>
+    <img src="vids/meta-animation.gif" class="service-gif" />
+  </div>
+  <h5>Meta <span class="accent-text">Ads</span></h5>
+  <p>High-converting Facebook and Instagram campaigns built for scalable ROAS.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon-row">
+    <div class="service-icon">03</div>
+    <img src="vids/google-animation.gif" class="service-gif" />
+  </div>
+  <h5>Google <span class="accent-text">Ads</span></h5>
+  <p>Capture high-intent demand through search, shopping, display, and YouTube.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon-row">
+    <div class="service-icon">04</div>
+    <img src="vids/seo-animation.gif" class="service-gif" />
+  </div>
+  <h5>SEO <span class="accent-text">Optimization</span></h5>
+  <p>Long-term organic growth powered by technical, on-page, and content SEO.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon-row">
+    <div class="service-icon">05</div>
+    <img src="vids/amazon-animation.gif" class="service-gif" />
+  </div>
+  <h5>Amazon <span class="accent-text">Marketplace</span></h5>
+  <p>Listing optimization, A+ content, storefronts, and full account management.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon-row">
+    <div class="service-icon">06</div>
+    <img src="vids/flipkart-animation.gif" class="service-gif" />
+  </div>
+  <h5>Flipkart <span class="accent-text">Ads</span></h5>
+  <p>Marketplace-specific strategies to dominate visibility and conversions.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon-row">
+    <div class="service-icon">07</div>
+    <img src="vids/growth-animation.gif" class="service-gif" />
+  </div>
+  <h5>Growth <span class="accent-text">Marketing</span></h5>
+  <p>Full-funnel experimentation across acquisition, activation, and retention.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon-row">
+    <div class="service-icon">08</div>
+    <img src="vids/youtube-animation.gif" class="service-gif" />
+  </div>
+  <h5>YouTube <span class="accent-text">Ads</span></h5>
+  <p>Video-first campaigns optimized for awareness, consideration, and scale.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon-row">
+    <div class="service-icon">09</div>
+    <img src="vids/retention-animation.gif" class="service-gif" />
+  </div>
+  <h5>Retention <span class="accent-text">Marketing</span></h5>
+  <p>Email, WhatsApp, SMS, and lifecycle flows to maximize LTV.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon-row">
+    <div class="service-icon">10</div>
+    <img src="vids/analytics-animation.gif" class="service-gif" />
+  </div>
+  <h5>Analytics & <span class="accent-text">Reporting</span></h5>
+  <p>Custom dashboards, GA4, attribution modeling, and performance insights.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon-row">
+    <div class="service-icon">11</div>
+    <img src="vids/automation-animation.gif" class="service-gif" />
+  </div>
+  <h5>Marketing <span class="accent-text">Automation</span></h5>
+  <p>CRM workflows, integrations, lead scoring, and funnel automation systems.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon-row">
+    <div class="service-icon">12</div>
+    <img src="vids/webdev-animation.gif" class="service-gif" />
+  </div>
+  <h5>Web <span class="accent-text">Development</span></h5>
+  <p>High-performance websites optimized for UX, speed, and conversions.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon-row">
+    <div class="service-icon">13</div>
+    <img src="vids/creative-animation.gif" class="service-gif" />
+  </div>
+  <h5>Creative <span class="accent-text">Design Analysis</span></h5>
+  <p>Ad creative diagnostics, CRO insights, and performance-led design direction.</p>
+</div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!--Case Studies-->
+<section class="case-studies-section">
+    <div class="section-header">
+        <p class="sub-headline">Visionary brands choose H&F</p>
+        <h2 class="main-headline">Hyper Growth for Hyper Active Clients</h2>
+    </div>
+
+    <div class="studies-grid">
+        
+        <div class="study-card">
+            <div class="card-image">
+                <img src="https://viralmint.in/wp-content/uploads/2023/08/Gynoveda-500x400-1.jpg" alt="Gynoveda Results">
+            </div>
+            <div class="card-content">
+                <img class="brand-logo" src="https://viralmint.in/wp-content/uploads/2023/07/gynoveda.png" alt="Gynoveda">
+                <div class="stat">
+                    <span class="number">305</span><span class="suffix">%</span>
+                </div>
+                <h3 class="stat-label">Growth in 1st time users</h3>
+            </div>
+        </div>
+
+        <div class="study-card">
+            <div class="card-image">
+                <img src="https://viralmint.in/wp-content/uploads/2023/08/foxtale.jpg" alt="Foxtale Results">
+            </div>
+            <div class="card-content">
+                <img class="brand-logo" src="https://viralmint.in/wp-content/uploads/2023/08/foxtale.png" alt="Foxtale">
+                <div class="stat">
+                    <span class="number">9</span><span class="suffix">%</span>
+                </div>
+                <h3 class="stat-label">Growth in AOV</h3>
+            </div>
+        </div>
+
+        <div class="study-card">
+            <div class="card-image">
+                <img src="https://viralmint.in/wp-content/uploads/2023/08/adil-qadri.jpg" alt="Adil Qadri Results">
+            </div>
+            <div class="card-content">
+                <img class="brand-logo" src="https://viralmint.in/wp-content/uploads/2023/08/Adilqadri-logo.png" alt="Adil Qadri">
+                <div class="stat">
+                    <span class="number">170</span><span class="suffix">%</span>
+                </div>
+                <h3 class="stat-label">Increase in ROAS</h3>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!--Blogs-->
+<section class="blog-section">
+    <div class="blog-title-container marquee">
+  <div class="marquee-track">
+    <span> Latest News &amp; Insights | </span>
+    <span> Latest News &amp; Insights | </span>
+    <span> Latest News &amp; Insights | </span>
+    <span> Latest News &amp; Insights | </span>
+  </div>
+</div>
+
+
+    <div class="blog-wrapper">
+        <div class="blog-track" id="blogTrack">
+            
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="blog-category">Marketing</span>
+                    <h2 class="blog-title">The Future of eCommerce in 2025</h2>
+                    <p class="blog-excerpt">Discover how AI is reshaping the way customers interact with luxury brands online...</p>
+                    <a href="#" class="blog-link">Read More —</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="blog-category">Design</span>
+                    <h2 class="blog-title">Why Minimalism Still Wins</h2>
+                    <p class="blog-excerpt">A deep dive into why high-conversion websites are moving toward cleaner, faster layouts...</p>
+                    <a href="#" class="blog-link">Read More —</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="blog-category">Strategy</span>
+                    <h2 class="blog-title">Scaling Your Brand Globally</h2>
+                    <p class="blog-excerpt">How to take a local hero brand and introduce it to international markets effectively...</p>
+                    <a href="#" class="blog-link">Read More —</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="blog-category">Tech</span>
+                    <h2 class="blog-title">Performance Optimization Tips</h2>
+                    <p class="blog-excerpt">Everything you need to know about page speed and its direct impact on your ROI...</p>
+                    <a href="#" class="blog-link">Read More —</a>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="blog-controls">
+            <button class="blog-nav blog-prev" aria-label="Previous Post">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button class="blog-nav blog-next" aria-label="Next Post">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!--Contact Us Form-->
+				<section class="contact-section" id="contact-us">
+    <div class="container">
+        <div class="contact-split-grid">
+            
+            <div class="contact-form-side">
+                
+                
+                <div class="calendly-form-wrapper">
+
+  <div 
+    class="calendly-inline-widget"
+    data-url="https://calendly.com/kashyap-sawanjha?primary_color=e43636"
+    style="min-width:320px;height:700px;">
+  </div>
+
+</div>
+
+            </div>
+
+            <div class="contact-quote-side">
+
+  <div class="contact-left-content">
+
+    <h2 class="contact-left-title">
+      Say hello<span>.</span>
+    </h2>
+
+    <p class="contact-left-quote">
+      “The hustle gets you in the door —
+      the flow keeps you in the room.”
+    </p>
+
+    <div class="contact-divider"></div>
+
+    <div class="contact-info-footer">
+      <div class="info-item">
+        <span>Direct Line</span>
+        <p>+91 98903 26596</p>
+      </div>
+      <div class="info-item">
+        <span>Email</span>
+        <p>roi@hustlenflow.com</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+        </div>
+    </div>
+</section>
+
+<!--Footer-->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col about-col">
+            <img src="logos/hustleandflow-logo.png" alt="Hustle and Flow" class="footer-logo">
+            <p class="footer-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quo libero optio deleniti vero, ad tempore!
+            </p>
+            
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-title">Our Services</h4>
+            <ul class="footer-links">
+                <li><a href="#our-services">SEO</a></li>
+                <li><a href="#our-services">Amazon</a></li>
+                <li><a href="#our-services">Google Ads</a></li>
+                <li><a href="#our-services">Facebook Ads</a></li>
+                <li><a href="#our-services">Web Design</a></li>
+
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-title">Let's Talk!</h4>
+            <p class="footer-address">Some Long Address, In India - Zip Code.</p>
+            <div class="social-icons">
+                <a href="#"><i data-lucide="mail"></i></a>
+                <a href="#"><i data-lucide="instagram"></i></a>
+                <a href="#"><i data-lucide="twitter"></i></a>
+                <a href="#"><i data-lucide="linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>Copyright © 2025 Hustle And Flow. All Rights Reserved.</p>
+    </div>
+</footer>	
+
+
+	<script src="https://unpkg.com/lucide@latest"></script>
+		<script>
+  lucide.createIcons();
+</script>
+	<script src="slider.js"></script>
+	<script src="carousel.js"></script>
+    <script src="logo-loop.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js"   async></script>
+      <script>
+document.body.style.overflow = "hidden";
+
+window.addEventListener("load", () => {
+  const splash = document.getElementById("splash");
+
+  if (!splash) return;
+
+  // light → dark
+  setTimeout(() => {
+    splash.classList.add("dark");
+  }, 1000);
+
+  // fade out
+  setTimeout(() => {
+    splash.style.opacity = "0";
+  }, 2000);
+
+  // remove completely
+  setTimeout(() => {
+    splash.remove();
+    document.body.style.overflow = "";
+  }, 2700);
+});
+</script>
+<script>
+  const track = document.getElementById("servicesGrid");
+const cards = Array.from(track.children);
+
+const cardWidth = cards[0].offsetWidth + 30; // gap
+let index = 0;
+
+// CLONE FIRST + LAST SET
+cards.forEach(card => {
+  track.appendChild(card.cloneNode(true));
+});
+
+cards.slice().reverse().forEach(card => {
+  track.prepend(card.cloneNode(true));
+});
+
+const totalCards = track.children.length;
+
+// Start from real first card
+index = cards.length;
+track.style.transform = `translateX(-${index * cardWidth}px)`;
+
+// ------------------------------------
+
+function moveServices(direction) {
+  if (direction === "right") index++;
+  else index--;
+
+  track.style.transition = "transform 0.45s ease";
+  track.style.transform = `translateX(-${index * cardWidth}px)`;
+
+  // 🔁 loop logic
+  setTimeout(() => {
+    if (index >= totalCards - cards.length) {
+      index = cards.length;
+      track.style.transition = "none";
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+
+    if (index < cards.length) {
+      index = totalCards - cards.length * 2;
+      track.style.transition = "none";
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+  }, 460);
+}
+
+</script>
+
+</main>
+
+
+
+</body>
+</html>
