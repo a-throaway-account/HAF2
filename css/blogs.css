@@ -22,6 +22,20 @@
   );
 }
 
+.blog-link {
+    display: inline-block; /* Essential for transform to work */
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: var(--brand-orange);
+    font-weight: bold;
+}
+
+.blog-link:hover {
+    /* This will move the text 8 pixels to the right on hover */
+    transform: translateX(8px); 
+    color: var(--brand-cream);
+}
+
 .marquee-track {
   display: flex;
   flex-direction: row; /* Force horizontal */

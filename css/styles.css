@@ -544,7 +544,7 @@ img { max-width: 100%; height: auto; display: flex; }
 .card-content {
     pointer-events: none;
     border-radius: 12px;
-    transform: translateZ(40px);
+    transform: translateZ(20px);
     color: #000000; /* Keeping text black as requested */
 }
 
@@ -1110,9 +1110,20 @@ img { max-width: 100%; height: auto; display: flex; }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: pointer;
     transform-style: preserve-3d;
-    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card:hover {
+    transform: translateY(-10px); /* Card lifts up */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3); /* Shadow gets deeper */
+}
+
+.blog-card:hover .blog-link {
+    transform: translateX(10px);
+    color: #000;
 }
 
 .blog-category {
@@ -1121,6 +1132,14 @@ img { max-width: 100%; height: auto; display: flex; }
     text-transform: uppercase;
     color: #dc3232; /* Red Accent */
     letter-spacing: 2px;
+}
+
+.card-link-wrapper {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: inherit; /* Keeps your title black and excerpt grey */
 }
 
 .blog-title {
@@ -1138,13 +1157,19 @@ img { max-width: 100%; height: auto; display: flex; }
 }
 
 .blog-link {
-    font-weight: 700;
-    color: #000;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    border-bottom: 2px solid #dc3232;
-    align-self: flex-start;
+    display: inline-block; 
+    text-decoration: none !important; /* Forces no underline */
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: #dc3232; /* Using the Red Accent for visibility on Cream */
+    font-weight: 800;
+    position: relative;
+    z-index: 10; /* Ensures it's on top of the card's 3D layers */
+    cursor: pointer;
+}
+
+.blog-link:hover {
+    transform: translateX(10px) !important; 
+    color: #000000; /* Darkens on hover for contrast */
 }
 
 /* --- Navigation --- */
