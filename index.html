@@ -12,18 +12,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 
 	<link rel="canonical" href="https://hustleandflow.in/" />
-	<link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="marquee.css">
+	<link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/marquee.css">
     <link  href="https://assets.calendly.com/assets/external/widget.css"
   rel="stylesheet"/>
-  <link rel="stylesheet" href="loading_screen.css">
-  <link rel="stylesheet" href="launch-section.css">
-  <link rel="stylesheet" href="reviews.css">
-  <link rel="stylesheet" href="philosophy.css">
-  <link rel="stylesheet" href="services.css">
-  <link rel="stylesheet" href="focal-hero.css">
-  <link rel="stylesheet" href="layout.css">
-  <link rel="stylesheet" href="blogs.css">
+  <link rel="stylesheet" href="css/loading_screen.css">
+  <link rel="stylesheet" href="css/launch-section.css">
+  <link rel="stylesheet" href="css/reviews.css">
+  <link rel="stylesheet" href="css/philosophy.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/focal-hero.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/blogs.css">
+  <script>
+        // Immediate hide to prevent flash of content
+        document.documentElement.style.overflow = "hidden";
+    </script>
 
 		
 </head>
@@ -64,28 +68,10 @@
   <a href="#our-services">Services</a>
   <a href="#contact-us">Contact</a>
 </div>
-<script>
-const burger = document.getElementById("menuToggle");
-const menu = document.getElementById("mobileMenu");
-
-burger.addEventListener("click", () => {
-  burger.classList.toggle("active");
-  menu.classList.toggle("open");
-});
-</script>
 
 
-<script>
-    const nav = document.querySelector(".main-nav");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 20) {
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
-  }
-});
-</script>
+
 <!--Main-Hero-->
 
 <main class="site-wrapper">
@@ -988,87 +974,16 @@ btn.addEventListener("click", () => {
 </footer>	
 
 
-	<script src="https://unpkg.com/lucide@latest"></script>
-		<script>
-  lucide.createIcons();
-</script>
-	<script src="slider.js"></script>
-	<script src="carousel.js"></script>
-    <script src="logo-loop.js"></script>
-    <script src="https://assets.calendly.com/assets/external/widget.js"   async></script>
-      <script>
-document.body.style.overflow = "hidden";
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-window.addEventListener("load", () => {
-  const splash = document.getElementById("splash");
+    <script src="main.js"></script>
 
-  if (!splash) return;
-
-  // light → dark
-  setTimeout(() => {
-    splash.classList.add("dark");
-  }, 1000);
-
-  // fade out
-  setTimeout(() => {
-    splash.style.opacity = "0";
-  }, 2000);
-
-  // remove completely
-  setTimeout(() => {
-    splash.remove();
-    document.body.style.overflow = "";
-  }, 2700);
-});
-</script>
-<script>
-  const track = document.getElementById("servicesGrid");
-const cards = Array.from(track.children);
-
-const cardWidth = cards[0].offsetWidth + 30; // gap
-let index = 0;
-
-// CLONE FIRST + LAST SET
-cards.forEach(card => {
-  track.appendChild(card.cloneNode(true));
-});
-
-cards.slice().reverse().forEach(card => {
-  track.prepend(card.cloneNode(true));
-});
-
-const totalCards = track.children.length;
-
-// Start from real first card
-index = cards.length;
-track.style.transform = `translateX(-${index * cardWidth}px)`;
-
-// ------------------------------------
-
-function moveServices(direction) {
-  if (direction === "right") index++;
-  else index--;
-
-  track.style.transition = "transform 0.45s ease";
-  track.style.transform = `translateX(-${index * cardWidth}px)`;
-
-  // 🔁 loop logic
-  setTimeout(() => {
-    if (index >= totalCards - cards.length) {
-      index = cards.length;
-      track.style.transition = "none";
-      track.style.transform = `translateX(-${index * cardWidth}px)`;
-    }
-
-    if (index < cards.length) {
-      index = totalCards - cards.length * 2;
-      track.style.transition = "none";
-      track.style.transform = `translateX(-${index * cardWidth}px)`;
-    }
-  }, 460);
-}
-
-</script>
+    <script>
+        lucide.createIcons();
+    </script>
 
 </main>
 
