@@ -1,0 +1,270 @@
+/* ===== PROGRESS ===== */
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+
+body {
+    font-family: "Montserrat", system-ui, -apple-system,
+                 BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Helvetica, Arial, sans-serif;
+
+    background-color: var(--bg-light);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+  max-width: 100%;
+}
+
+.page-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 9999;
+}
+
+#bar {
+  width: 0%;
+  height: 4px;
+  background: var(--primary);
+}
+
+
+/* ===== HERO ===== */
+
+.svc-hero {
+  padding: 120px 20px 60px;
+}
+
+.hero-split {
+  max-width: 1300px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-left h1 {
+  font-size: clamp(3rem, 6vw, 4.6rem);
+  line-height: 1;
+  margin: 12px 0;
+}
+
+.hero-right img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+
+/* ===== LADDER ===== */
+
+.ladder {
+  padding: 80px 20px;
+  background: #fafafa;
+}
+
+.steps {
+  max-width: 1100px;
+  margin: 40px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.step {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.step span {
+  font-weight: 900;
+  color: var(--primary);
+}
+
+
+/* ===== BENTO ===== */
+/* ===== BENTO BASE ===== */
+.services-wrapper {
+  max-width: 1240px;       /* main control */
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+
+#bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  transition: background 0.4s ease;
+}
+
+#bento.focus {
+  background: rgba(0,0,0,.35);
+}
+
+/* TILE BASE */
+.tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.08);
+  transform: scale(1);
+  transition:
+    transform .45s cubic-bezier(.22,1,.36,1),
+    filter .45s ease,
+    opacity .4s ease;
+}
+
+/* IMAGE */
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transform: scale(1);
+  transition: transform .6s cubic-bezier(.22,1,.36,1);
+}
+
+/* INFO BAR */
+.tile .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 14px;
+  background: linear-gradient(to top, rgba(0,0,0,.8), transparent);
+
+  transition: opacity .3s ease;
+}
+
+/* REVEAL PANEL */
+.tile .reveal {
+  position: absolute;
+  inset: 0;
+  padding: 22px;
+
+  background: rgba(0,0,0,.82);
+  color: #fff;
+
+  opacity: 0;
+  transform: translateY(12px);
+
+  transition:
+    opacity .45s ease,
+    transform .45s cubic-bezier(.22,1,.36,1);
+}
+
+/* ===== HOVER STATE ===== */
+
+.tile.active {
+  z-index: 3;
+  transform: scale(1.08);
+}
+
+.tile.active img {
+  transform: scale(1.12);
+}
+
+.tile.active .reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* neighbours soften */
+#bento.focus .tile:not(.active) {
+  filter: brightness(.6);
+  transform: scale(.96);
+}
+
+/* optional: on huge screens don’t get massive */
+@media (min-width: 1600px) {
+  .services-wrapper {
+    max-width: 1360px;
+  }
+}
+
+/* on tablets */
+@media (max-width: 1024px) {
+  .services-wrapper {
+    max-width: 960px;
+  }
+  #bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+  .services-wrapper {
+    max-width: 100%;
+    padding: 0 16px 60px;
+  }
+  #bento {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===== RAIL ===== */
+
+.rail {
+  background: #000;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.rail-track {
+  display: flex;
+  gap: 30px;
+  animation: rail 30s linear infinite;
+}
+
+.proof {
+  background: #111;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 260px;
+}
+
+@keyframes rail {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+
+/* ===== PROCESS ===== */
+
+.process {
+  padding: 80px 20px;
+}
+
+.process-grid {
+  max-width: 1100px;
+  margin: 30px auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+
+/* ===== CTA ===== */
+
+.svc-cta {
+  text-align: center;
+  padding: 100px 20px;
+  background: #fafafa;
+}
