@@ -1,0 +1,130 @@
+.main-nav {
+    width: 100%;
+    padding: 40px 0;
+    background-color: #fff;
+    position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+/* Updated Scrolled State */
+/* Scrolled State: Solid White, No Blur */
+.main-nav.scrolled {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #D9D9D9;
+}
+
+.nav-container {
+    width: 100%;
+    padding: 0px 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img {
+    height: 50px;
+    width: auto;
+    /*filter: brightness(0) invert(1); */
+    transition: all 0.3s ease;
+}
+.burger-line {
+    display: block;
+    width: 35px;
+    height: 2px;
+    background-color: #F6EFD2; /* Cream lines for contrast */
+    transition: 0.3s ease;
+}
+
+.menu-burger:hover .burger-line {
+    background-color: #752412; /* Hover turns lines red */
+}
+
+
+.nav-logo img {
+    height: 40px;
+    width: auto;
+    transition: height 0.3s ease;
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+
+  z-index: 9998;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-menu a {
+  font-size: 2rem;
+  margin: 20px 0;
+  color: #000;
+  text-decoration: none;
+}
+
+
+/* THE BURGER MENU */
+.menu-burger {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.burger-line {
+    display: block;
+    width: 35px;
+    height: 2px;
+    background-color: #e76e69; /* Your main text color */
+    transition: 0.3s ease;
+}
+
+.menu-burger.active .burger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-burger.active .burger-line:nth-child(2) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Burger Hover Effect */
+.menu-burger:hover .burger-line:first-child {
+    transform: translateX(-5px);
+    background-color: #6F1A07; /* Your accent terracotta */
+}
+
+.menu-burger:hover .burger-line:last-child {
+    transform: translateX(5px);
+    background-color: #6F1A07;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .nav-container { padding: 0 20px; }
+    .nav-logo img { height: 30px; }
+}
