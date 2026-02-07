@@ -1,3 +1,123 @@
+// ===== TYPE ANIMATION =====
+const tags = document.querySelectorAll("#tagTrack span");
+const cards = document.querySelectorAll(".blog-card");
+
+let activeTag = null;
+
+tags.forEach(tag => {
+
+  tag.addEventListener("click", () => {
+
+    const value = tag.dataset.tag;
+
+    // toggle off if same clicked
+    if (activeTag === value) {
+      resetFilter();
+      return;
+    }
+
+    activeTag = value;
+
+    // color logic
+    tags.forEach(t => {
+      t.classList.remove("active");
+      t.classList.add("dim");
+    });
+
+    tag.classList.add("active");
+    tag.classList.remove("dim");
+
+    // filter cards
+    cards.forEach(card => {
+      const list = card.dataset.tags.toLowerCase();
+
+      if (list.includes(value)) {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+
+  });
+
+});
+
+
+function resetFilter() {
+  activeTag = null;
+
+  tags.forEach(t => {
+    t.classList.remove("active", "dim");
+  });
+
+  cards.forEach(c => c.classList.remove("hidden"));
+}
+
+
+const words = [
+  "strategy.",
+  "system design.",
+  "experimenting.",
+  "compounding.",
+  "execution."
+];
+
+let i = 0;
+let j = 0;
+let deleting = false;
+
+const el = document.getElementById("typeText");
+
+function type() {
+  const word = words[i];
+
+  if (!deleting) {
+    el.textContent = word.slice(0, j++);
+    if (j > word.length) {
+      deleting = true;
+      setTimeout(type, 1200);
+      return;
+    }
+  } else {
+    el.textContent = word.slice(0, j--);
+    if (j === 0) {
+      deleting = false;
+      i = (i + 1) % words.length;
+    }
+  }
+
+  setTimeout(type, deleting ? 40 : 70);
+}
+
+type();
+
+
+// ===== CALENDLY MODAL =====
+const modal = document.getElementById("calendlyModal");
+const open  = document.getElementById("openCalendly");
+const close = document.getElementById("closeCalendly");
+
+open.addEventListener("click", () =>
+  modal.classList.add("open")
+);
+
+close.addEventListener("click", () =>
+  modal.classList.remove("open")
+);
+
+modal.addEventListener("click", e => {
+  if (e.target === modal)
+    modal.classList.remove("open");
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".blog-track");
+
+  const speed = Math.floor(Math.random() * (38 - 28) + 28);
+  track.style.animationDuration = speed + "s";
+});
+
+
 const data = [
   {
     title: "How CLV drives profit",

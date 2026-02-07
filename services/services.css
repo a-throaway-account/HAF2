@@ -1,270 +1,259 @@
-/* ===== PROGRESS ===== */
-html {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+/* NUCLEAR RESET – KILLS ALL GUTTERS */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  background: var(--bg-light) !important;
 }
 
-
+/* =========================================================
+   SERVICES SECTION
+========================================================= */
 
 body {
-    font-family: "Montserrat", system-ui, -apple-system,
-                 BlinkMacSystemFont, "Segoe UI",
-                 Roboto, Helvetica, Arial, sans-serif;
-
-    background-color: var(--bg-light);
-    color: var(--dark);
-    line-height: 1.6;
     overflow-x: hidden;
-    width: 100%;
-  max-width: 100%;
 }
 
-.page-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  z-index: 9999;
+.services-section {
+  margin-top: 10px;
+    background: #ffffff;
+    padding: clamp(80px, 8vw, 120px) 0;
 }
 
-#bar {
-  width: 0%;
-  height: 4px;
-  background: var(--primary);
+/* ---------------------------------------------------------
+   HEADER
+--------------------------------------------------------- */
+
+.services-header {
+    margin-bottom: 50px;
 }
 
-
-/* ===== HERO ===== */
-
-.svc-hero {
-  padding: 120px 20px 60px;
+.label-accent {
+    color: #E43636;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
 }
 
-.hero-split {
-  max-width: 1300px;
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 60px;
-  align-items: center;
+.section-title {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: #000;
 }
 
-.hero-left h1 {
-  font-size: clamp(3rem, 6vw, 4.6rem);
-  line-height: 1;
-  margin: 12px 0;
+.text-highlight {
+    color: #E43636;
 }
 
-.hero-right img {
-  width: 100%;
-  border-radius: 12px;
+/* =========================================================
+   SLIDER WRAPPER
+========================================================= */
+
+.services-slider {
+    position: relative;
+    overflow-x: hidden;
+    padding-bottom: 20px;
 }
 
+/* =========================================================
+   TRACK
+========================================================= */
 
-/* ===== LADDER ===== */
+.services-track {
+    display: flex;
+    gap: 32px;
+    width: max-content;
+    transform: translateX(0);
+    transition: transform 0.6s cubic-bezier(.22,.61,.36,1);
 
-.ladder {
-  padding: 80px 20px;
-  background: #fafafa;
+    will-change: transform;
 }
 
-.steps {
-  max-width: 1100px;
-  margin: 40px auto 0;
+/* =========================================================
+   CARD
+========================================================= */
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
+.service-card {
+    flex: 0 0 clamp(280px, 28vw, 360px);
+    text-align: center;
+
+    background: #fff;
+    border: 1px solid #E2DDB4;
+
+    padding: clamp(32px, 4vw, 48px)
+             clamp(28px, 3vw, 42px);
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
 }
 
-.step {
-  background: #fff;
-  border: 1px solid #eee;
-  padding: 24px;
-  border-radius: 12px;
+.service-card:hover {
+    transform: translateY(-6px);
+    border-color: #E43636;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
 }
 
-.step span {
-  font-weight: 900;
-  color: var(--primary);
+/* =========================================================
+   ICON ROW
+========================================================= */
+
+.service-icon-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
 }
 
-
-/* ===== BENTO ===== */
-/* ===== BENTO BASE ===== */
-.services-wrapper {
-  max-width: 1240px;       /* main control */
-  margin: 0 auto;
-  padding: 0 24px 80px;
+.service-icon {
+    font-size: clamp(2.4rem, 3vw, 3rem);
+    font-weight: 900;
+    line-height: 1;
+    color: #000;
 }
 
-
-#bento {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  transition: background 0.4s ease;
+.service-gif {
+    width: clamp(46px, 5vw, 64px);
+    height: clamp(46px, 5vw, 64px);
+    object-fit: contain;
 }
 
-#bento.focus {
-  background: rgba(0,0,0,.35);
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.service-card h5 {
+    font-size: clamp(1.4rem, 2vw, 1.75rem);
+    font-weight: 800;
+    margin-bottom: 14px;
 }
 
-/* TILE BASE */
-.tile {
-  position: relative;
-  overflow: hidden;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.08);
-  transform: scale(1);
-  transition:
-    transform .45s cubic-bezier(.22,1,.36,1),
-    filter .45s ease,
-    opacity .4s ease;
+.service-card p {
+    color: #555;
+    line-height: 1.65;
+    margin-bottom: 28px;
+    font-size: clamp(0.95rem, 1.2vw, 1rem);
 }
 
-/* IMAGE */
-.tile img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* =========================================================
+   CTA
+========================================================= */
 
-  transform: scale(1);
-  transition: transform .6s cubic-bezier(.22,1,.36,1);
+.text-link {
+    margin-top: auto;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #E43636;
+    text-decoration: none;
 }
 
-/* INFO BAR */
-.tile .info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  padding: 14px;
-  background: linear-gradient(to top, rgba(0,0,0,.8), transparent);
-
-  transition: opacity .3s ease;
+.text-link::after {
+    content: " →";
 }
 
-/* REVEAL PANEL */
-.tile .reveal {
-  position: absolute;
-  inset: 0;
-  padding: 22px;
+/* =========================================================
+   GRADIENT MASKS
+========================================================= */
 
-  background: rgba(0,0,0,.82);
-  color: #fff;
-
-  opacity: 0;
-  transform: translateY(12px);
-
-  transition:
-    opacity .45s ease,
-    transform .45s cubic-bezier(.22,1,.36,1);
+.services-slider::before,
+.services-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
 }
 
-/* ===== HOVER STATE ===== */
-
-.tile.active {
-  z-index: 3;
-  transform: scale(1.08);
+.services-slider::before {
+    left: 0;
+    background: linear-gradient(
+        to right,
+        #ffffff 0%,
+        rgba(255,255,255,0.8) 35%,
+        transparent 100%
+    );
 }
 
-.tile.active img {
-  transform: scale(1.12);
+.services-slider::after {
+    right: 0;
+    background: linear-gradient(
+        to left,
+        #ffffff 0%,
+        rgba(255,255,255,0.8) 35%,
+        transparent 100%
+    );
 }
 
-.tile.active .reveal {
-  opacity: 1;
-  transform: translateY(0);
+/* =========================================================
+   ARROWS
+========================================================= */
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid #E2DDB4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    opacity: 0;
+
+    transition: all 0.25s ease;
 }
 
-/* neighbours soften */
-#bento.focus .tile:not(.active) {
-  filter: brightness(.6);
-  transform: scale(.96);
+.slider-arrow.prev { left: 20px; }
+.slider-arrow.next { right: 20px; }
+
+.slider-arrow:hover {
+    background: #E43636;
+    color: #fff;
+    border-color: #E43636;
+    transform: translateY(-50%) scale(1.05);
 }
 
-/* optional: on huge screens don’t get massive */
-@media (min-width: 1600px) {
-  .services-wrapper {
-    max-width: 1360px;
-  }
+.services-slider:hover .slider-arrow {
+    opacity: 1;
 }
 
-/* on tablets */
-@media (max-width: 1024px) {
-  .services-wrapper {
-    max-width: 960px;
-  }
-  #bento {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+/* =========================================================
+   MOBILE
+========================================================= */
 
-/* mobile */
-@media (max-width: 640px) {
-  .services-wrapper {
-    max-width: 100%;
-    padding: 0 16px 60px;
-  }
-  #bento {
-    grid-template-columns: 1fr;
-  }
-}
+@media (max-width: 900px) {
 
+    .services-track {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 10px;
+    }
 
-/* ===== RAIL ===== */
+    .service-card {
+        scroll-snap-align: start;
+    }
 
-.rail {
-  background: #000;
-  padding: 40px 0;
-  overflow: hidden;
-}
-
-.rail-track {
-  display: flex;
-  gap: 30px;
-  animation: rail 30s linear infinite;
-}
-
-.proof {
-  background: #111;
-  color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  min-width: 260px;
-}
-
-@keyframes rail {
-  from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
-}
-
-
-/* ===== PROCESS ===== */
-
-.process {
-  padding: 80px 20px;
-}
-
-.process-grid {
-  max-width: 1100px;
-  margin: 30px auto;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-}
-
-
-/* ===== CTA ===== */
-
-.svc-cta {
-  text-align: center;
-  padding: 100px 20px;
-  background: #fafafa;
+    .slider-arrow {
+        display: none;
+    }
 }

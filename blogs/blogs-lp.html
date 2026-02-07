@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Blogs Archive - H&F</title>
-  <link rel="stylesheet" href="blogs-lp.css">
-  <link rel="stylesheet" href="../css/styles.css">
+<meta charset="utf-8">
+<title>Blogs — Hustle & Flow</title>
+
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="blogs-lp.css">
+<link rel="stylesheet" href="../css/blogs.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
 <div class="progress-container">
     <div class="progress-bar" id="scrollBar"></div>
 </div>
@@ -28,7 +33,7 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="/">Home</a>
-  <a href="../#our-services">Services</a>
+  <a href="../services/services.html">Services</a>
   <a href="../blogs/blogs-lp.html"> Blogs</a>
   <a href="../#contact-us">Contact Us</a>
   
@@ -36,85 +41,138 @@
 
 
 
-<!-- HERO -->
-<section class="blog-hero">
-  <span class="label-accent">Knowledge Hub</span>
 
-  <h1 class="hero-title">
-    Thoughts that shape<br>
-    <span class="text-highlight">Performance Brands</span>
-  </h1>
+<!--Blogs-->
+<section id="blogs" class="blog-section">
 
-  <p class="hero-sub">
-    Strategy | D2C | Marketplaces | Growth | Tech
-  </p>
+  <!-- HERO MARQUEE HEADER -->
+  <div class="blog-hero">
+
+    <h2 class="blog-mega">
+      Latest <span class="accent">News</span><br>
+      & <span class="accent">Insights</span>
+    </h2>
+
+    <div class="blog-marquee">
+  <div class="blog-marquee-track" id="tagTrack">
+
+    <span data-tag="performance">Performance Marketing •</span>
+    <span data-tag="retention">Retention •</span>
+    <span data-tag="analytics">Analytics •</span>
+    <span data-tag="creative">Creative Strategy •</span>
+    <span data-tag="growth">Growth Systems •</span>
+    <span data-tag="amazon">Amazon Ads •</span>
+    <span data-tag="google">Google Ads •</span>
+    <span data-tag="meta">Meta •</span>
+
+    <!-- repeat for seamless -->
+    <span data-tag="performance">Performance Marketing •</span>
+    <span data-tag="retention">Retention •</span>
+    <span data-tag="analytics">Analytics •</span>
+    <span data-tag="creative">Creative Strategy •</span>
+    <span data-tag="growth">Growth Systems •</span>
+    <span data-tag="amazon">Amazon Ads •</span>
+    <span data-tag="google">Google Ads •</span>
+    <span data-tag="meta">Meta •</span>
+
+  </div>
+</div>
 
 
-</section>
-
-<!-- FILTERS -->
-
-
-<!-- GRID -->
-<!-- MAIN LAYOUT -->
-<section class="blog-layout">
-
-  <!-- LEFT: TOASTS -->
-  <div class="blog-left">
-      <div class="blog-page-grid" id="blogGrid"></div>
-
-      
   </div>
 
-  <!-- RIGHT: SIDEBAR -->
-  <aside class="blog-sidebar">
 
-      <div class="sidebar-box">
-        <h4>Search</h4>
-        <input id="searchInput" placeholder="Search insights...">
-      </div>
 
-      <div class="sidebar-box">
-        <h4>Categories</h4>
+    <div class="blog-wrapper">
+        <div class="blog-cards" id="blogTrack">
+            
+            <article class="blog-card" data-tags="amazon marketing growth">
+                <a href="blogs/blogs-template.html" target="_blank" class="card-link-wrapper"><div class="card-content">
+                    <span class="blog-category">Marketing</span>
+                    <h2 class="blog-title">The Future of eCommerce in 2025</h2>
+                    <p class="blog-excerpt">Discover how AI is reshaping the way customers interact with luxury brands online...</p>
+                </div>
+                </a>
+            </article>
 
-        <div class="sidebar-filters">
-          <button class="filter active" data-cat="all">All</button>
-          <button class="filter" data-cat="marketing">Marketing</button>
-          <button class="filter" data-cat="d2c">D2C</button>
-          <button class="filter" data-cat="tech">Tech</button>
-          <button class="filter" data-cat="strategy">Strategy</button>
+            <article class="blog-card" data-tags="marketing amazon">
+
+                <a href="blogs/blogs-template.html" target="_blank" class="card-link-wrapper">
+                  <div class="card-content">
+                    <span class="blog-category">Design</span>
+                    <h2 class="blog-title">Why Minimalism Still Wins</h2>
+                    <p class="blog-excerpt">A deep dive into why high-conversion websites are moving toward cleaner, faster layouts...</p>
+                </div></a>
+            </article>
+
+            <article class="blog-card" data-tags="marketing amazon">
+                <a href="blogs/blogs-template.html" target="_blank" class="card-link-wrapper"><div class="card-content">
+                    <span class="blog-category">Strategy</span>
+                    <h2 class="blog-title">Scaling Your Brand Globally</h2>
+                    <p class="blog-excerpt">How to take a local hero brand and introduce it to international markets effectively...</p>
+                </div></a>
+            </article>
+
+            <article class="blog-card" data-tags="strategy growth">
+
+                <a href="blogs/blogs-template.html" target="_blank" class="card-link-wrapper"><div class="card-content">
+                    <span class="blog-category">Tech</span>
+                    <h2 class="blog-title">Performance Optimization Tips</h2>
+                    <p class="blog-excerpt">Everything you need to know about page speed and its direct impact on your ROI...</p>
+                </div></a>
+            </article>
+
         </div>
-      </div>
 
-  </aside>
+        
+    </div>
+</section>
+
+
+
+
+
+<!-- FINAL CTA -->
+<section class="svc-cta">
+
+  <div class="cta-inner">
+
+    <!-- ANIMATED HEADLINE -->
+    <h2 class="mega-title">
+      Growth is not luck.<br>
+      It’s <span class="type-text" id="typeText"></span>
+    </h2>
+
+    <!-- QUOTE -->
+    <blockquote class="cta-quote">
+      “Brands that win don’t shout louder —  
+      they engineer attention, trust, and momentum.”
+    </blockquote>
+
+    <!-- BUTTON -->
+    <button class="btn-primary cta-btn" id="openCalendly">
+      Book Strategy Call →
+    </button>
+
+    <p class="cta-note">20 min • No spam • Real plan</p>
+
+  </div>
 
 </section>
 
-<!-- PAGINATION -->
-<!--<div class="blog-pagination">
-  <button id="prevPage" class="slider-arrow next"
-        onclick="moveServices('right')">
-        <svg width="20" height="20" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor"
-          stroke-width="2.5" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path d="m15 18-6-6 6-6"></path>
-        </svg>
-      </button>
-  <span id="pageInfo">1 / 1</span>
-  <button class="" id="nextPage"
-        onclick="moveServices('right')">
-        <svg width="20" height="20" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor"
-          stroke-width="2.5" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path d="m9 18 6-6-6-6"/>
-        </svg>
-      </button>
-</div>
--->
+<!-- CALENDLY MODAL (same as before) -->
+<div class="calendly-modal" id="calendlyModal">
+  <div class="calendly-box">
+    <button class="close-calendly" id="closeCalendly">×</button>
 
-<!-- ===== FOOTER (SAME AS YOUR SITE) ===== -->
+    <iframe
+      src="https://calendly.com/YOUR_USERNAME/30min"
+      frameborder="0">
+    </iframe>
+  </div>
+</div>
+
+
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-col about-col">
@@ -161,19 +219,10 @@
     <div class="footer-bottom">
         <p>Copyright © 2025 Hustle And Flow. All Rights Reserved.</p>
     </div>
-</footer>	
-<!-- ===== END FOOTER ===== -->
+</footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/lucide@latest"></script>
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-<script src="blogs-nav.js"></script>
 <script src="blogs-lp.js"></script>
 <script src="../main.js"></script>
- <script>
-        lucide.createIcons();
-    </script>
 </body>
 </html>
