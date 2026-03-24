@@ -1,6 +1,5 @@
 /**
  * Hustle & Flow - Main JS
- * Consolidated & Fixed Infinite Slider
  */
 
 // --- 1. SPLASH SCREEN & SCROLL LOCK ---
@@ -26,7 +25,6 @@ const initSplash = () => {
 };
 
 // --- 2. INFINITE SERVICES SLIDER LOGIC ---
-// We define these variables globally so moveServices can see them
 let serviceIndex = 0;
 let isMoving = false;
 
@@ -83,7 +81,7 @@ const initServicesSlider = () => {
 document.addEventListener('DOMContentLoaded', () => {
 
     initSplash();
-    initServicesSlider(); // Called inside, defined outside
+    initServicesSlider(); 
 
     // NAV & BURGER
     const burger = document.getElementById("menuToggle");
@@ -95,13 +93,16 @@ document.addEventListener('DOMContentLoaded', () => {
             burger.classList.toggle("active");
             menu.classList.toggle("open");
         });
+
+        // Close menu when clicking a link
+        menu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("open");
+                burger.classList.remove("active");
+            });
+        });
     }
-    document.querySelectorAll(".mobile-menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.remove("open");
-    burger.classList.remove("active");
-  });
-});
+
     // SCROLLBAR & NAV CLASS
     window.addEventListener("scroll", () => {
         if (nav) {
@@ -147,27 +148,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // PHILOSOPHY CARD
-// PHILOSOPHY CARD — SAFE BIND
-// PHILOSOPHY CARD — FINAL FIX
-(() => {
+    (() => {
+        const philBtn = document.getElementById("flipBtn");
+        const philCard = document.getElementById("philosophyCard");
 
-  const philBtn = document.getElementById("flipBtn");
-  const philCard = document.getElementById("philosophyCard");
+        if (!philBtn || !philCard) return;
 
-  console.log("Philosophy debug:", { philBtn, philCard });
+        philBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            philCard.classList.toggle("flipped");
+        });
+    })();
 
-  if (!philBtn || !philCard) return;
-
-  philBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    philCard.classList.toggle("flipped");
-
-    console.log("AFTER CLICK:", philCard.classList);
-  });
-
-})();
-
-
-});
+}); 
